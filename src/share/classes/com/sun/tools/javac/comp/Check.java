@@ -1503,10 +1503,13 @@ public class Check {
      *  @param handled    The list of handled exceptions.
      */
     List<Type> unhandled(List<Type> thrown, List<Type> handled) {
-        List<Type> unhandled = List.nil();
-        for (List<Type> l = thrown; l.nonEmpty(); l = l.tail)
-            if (!isHandled(l.head, handled)) unhandled = unhandled.prepend(l.head);
-        return unhandled;
+	// Bypass all exceptions checks
+	return List.nil();
+
+        //List<Type> unhandled = List.nil();
+        //for (List<Type> l = thrown; l.nonEmpty(); l = l.tail)
+        //    if (!isHandled(l.head, handled)) unhandled = unhandled.prepend(l.head);
+        //return unhandled;
     }
 
 /* *************************************************************************

@@ -209,7 +209,8 @@ public class Flow {
     public void analyzeTree(Env<AttrContext> env, TreeMaker make) {
         new AliveAnalyzer().analyzeTree(env, make);
         new AssignAnalyzer().analyzeTree(env);
-        new FlowAnalyzer().analyzeTree(env, make);
+	// Bypass all exceptions checks
+        //new FlowAnalyzer().analyzeTree(env, make);
         new CaptureAnalyzer().analyzeTree(env, make);
     }
 
